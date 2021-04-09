@@ -33,7 +33,6 @@ def super_admin_required(func):
         if user.role_id != Roles.SUPER_ADMIN.value:
             return {"message":"The current user do not have the privileges to acomplish this action"}, 401
 
-        func(*args, **kwargs)
         return func(*args, **kwargs)
     return wrapper
 
